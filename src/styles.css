@@ -1,0 +1,44 @@
+/* CSS Nav Bar*/
+body {
+    margin: 30px 0px;
+}
+.navbar-default .navbar-nav > li.dropdown:hover > a, 
+.navbar-default .navbar-nav > li.dropdown:hover > a:hover,
+.navbar-default .navbar-nav > li.dropdown:hover > a:focus  {
+    background-color: #75b63e;
+    color:  #c4daac ;
+}
+li.dropdown:hover > .dropdown-menu {
+    display: block;
+}
+
+.fontS
+{
+	 color:  #c4daac;
+}
+/* CSS Nav Bar ends*/
+
+/* Sign IN CSS*/
+.nav-tabs {
+    margin-bottom: 15px;
+}
+.sign-with {
+    margin-top: 25px;
+    padding: 20px;
+}
+div#OR {
+    height: 30px;
+    width: 30px;
+    border: 1px solid #C2C2C2;
+    border-radius: 50%;
+    font-weight: bold;
+    line-height: 28px;
+    text-align: center;
+    font-size: 12px;
+    float: right;
+    position: absolute;
+    right: -16px;
+    top: 40%;
+    z-index: 1;
+    background: #DFDFDF;
+}

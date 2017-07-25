@@ -1,0 +1,368 @@
+<div class="container">
+    <nav class="navbar navbar-default" role="navigation" style="background-color: #151D17">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+                <div id="main" style="float:left">
+                    <span style="font-size:20px;cursor:pointer; color: white" onclick="openNav()">&#9776;</span>
+                </div>
+                <a class="navbar-brand" href="Index2.html" style="margin-bottom:5"><img src="https://vignette4.wikia.nocookie.net/okami/images/f/f0/Check_mark.png/revision/latest?cb=20130520141819" width="37" height="35" hspace="2px">
+</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" class="fontS">
+                <ul class="nav navbar-nav">
+                    <!-- <li><a href="#"><span class="glyphicon glyphicon-map-marker"></span> Select Location</a></li> -->
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-map-marker"></span> Select Location <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Pune</a></li>
+                            <li><a href="#">Pimpri Chinchwad</a></li>
+                            <li><a href="#">Nagpur</a></li>
+                            <li><a href="#">Aurangabad</a></li>
+                            <li><a href="#">Thane</a></li>
+                            <li><a href="#">Kolhapur</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Mumbai</a></li>
+                            <li><a href="#">Chennai</a></li>
+                            <li><a href="#">Delhi</a></li>
+                            <li><a href="#">Hyderabad</a></li>
+                            <li><a href="#">Bangalore</a></li>
+                            <li><a href="#">Kolkata</a></li>
+                            <li><a href="#">Surat</a></li>
+                            <li class="divider"></li>
+                            <li> OOI
+                                <ul>
+                                    <li><a href="#">New York</a></li>
+                                    <li><a href="#">LA</a></li>
+                                    <li><a href="#">Tampa</a></li>
+                                    <li><a href="#">Florida</a></li>
+
+
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-th-large"></span> Select Category <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li *ngFor="let item of Category"> {{item}} </li>
+                            <li class="divider"></li>
+                            <li><a href="#">Other Services</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+                <form class="navbar-form navbar-left" role="search">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search Ad...">
+                    </div>
+                    <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span>  Search</button>
+                </form>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">About Us <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Help</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Another Services</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Contact Us</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Feedback & Queries</a></li>
+                        </ul>
+                    </li>
+                    <!-- <li><a href="#"><span class="glyphicon glyphicon-user"></span>  Sign In</a></li> -->
+
+                    <button class="btn btn-xs btn-info" data-toggle="modal" data-target="#myModal" style="background-color:#151D17; margin-top:50; border: none;"><span class="glyphicon glyphicon-user"></span> Sign In</button>
+
+                    <a href="#" class="btn btn-xs btn-info" data-toggle="modal" data-target="#myPostAd" style="background-color: #dacc1e ; color:black; font-weight: bold; margin-top:17; border: none; ">Post a free Ad</a>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+</div>
+
+
+
+
+<!-- Sign In HTML Code -->
+<!-- Large modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    ×</button>
+                <h4 class="modal-title" id="myModalLabel">
+                    Login/Registration <a href="http://www.jquery2dotnet.com"></a></h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-8" style="border-right: 1px dotted #C2C2C2;padding-right: 30px;">
+                        <!-- Nav tabs -->
+                        <ul class="nav nav-tabs">
+                            <li class="active"><a href="#Login" data-toggle="tab">Login</a></li>
+                            <li><a href="#Registration" data-toggle="tab">Registration</a></li>
+                        </ul>
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="Login">
+                                <form role="form" class="form-horizontal">
+                                    <div class="form-group">
+                                        <label for="email" class="col-sm-2 control-label">
+                                        Email</label>
+                                        <div class="col-sm-10">
+                                            <input type="email" class="form-control" id="email1" placeholder="Email" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputPassword1" class="col-sm-2 control-label">
+                                        Password</label>
+                                        <div class="col-sm-10">
+                                            <input type="email" class="form-control" id="exampleInputPassword1" placeholder="Email" />
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-2">
+                                        </div>
+                                        <div class="col-sm-10">
+                                            <button type="submit" class="btn btn-primary btn-sm">
+                                            Submit</button>
+                                            <a href="javascript:;">Forgot your password?</a>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="tab-pane" id="Registration">
+                                <form role="form" class="form-horizontal">
+                                    <div class="form-group">
+                                        <label for="email" class="col-sm-2 control-label">
+                                        Name</label>
+                                        <div class="col-sm-10">
+                                            <div class="row">
+                                                <div class="col-md-3">
+                                                    <select class="form-control">
+                                                    <option>Mr.</option>
+                                                    <option>Ms.</option>
+                                                    <option>Mrs.</option>
+                                                </select>
+                                                </div>
+                                                <div class="col-md-9">
+                                                    <input type="text" class="form-control" placeholder="Name" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="email" class="col-sm-2 control-label">
+                                        Email</label>
+                                        <div class="col-sm-10">
+                                            <input type="email" class="form-control" id="email" placeholder="Email" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="mobile" class="col-sm-2 control-label">
+                                        Mobile</label>
+                                        <div class="col-sm-10">
+                                            <input type="email" class="form-control" id="mobile" placeholder="Mobile" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="password" class="col-sm-2 control-label">
+                                        Password</label>
+                                        <div class="col-sm-10">
+                                            <input type="password" class="form-control" id="password" placeholder="Password" />
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-2">
+                                        </div>
+                                        <div class="col-sm-10">
+                                            <button type="button" class="btn btn-primary btn-sm">
+                                            Save & Continue</button>
+                                            <button type="button" class="btn btn-default btn-sm">
+                                            Cancel</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div id="OR" class="hidden-xs">
+                            OR</div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="row text-center sign-with">
+                            <div class="col-md-12">
+                                <h3>
+                                    Sign in with</h3>
+                            </div>
+                            <div class="col-md-12">
+                                <div>
+                                    <a href="#" class="btn btn-primary" style="background-color:#3b5998 !important;">facebook</a>                                    </div>
+                                <div style="padding-top: 5">
+                                    <a href="#" class="btn btn-danger">google</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Sign In HTML code ends -->
+<div class="container">
+    <div id="mySidenav" class="sidenav">
+
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#"><span class="glyphicon glyphicon-user"></span>  My Account</a>
+        <a href="#" style="margin-left: 30">View my Ad</a>
+        <a href="#" style="margin-left: 30">Edit/ delete Ad</a>
+        <a href="#" style="margin-left: 30">Settings</a>
+        <hr style="border: solid 0.08px dimgrey">
+        <a href="#"><span class="glyphicon glyphicon-off"></span> Log out</a>
+        <hr style="border: solid 0.08px dimgrey">
+
+
+    </div>
+
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+            document.getElementById("main").style.marginLeft = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+            document.getElementById("main").style.marginLeft = "0";
+        }
+
+    </script>
+</div>
+
+<!-- Post Ad Starts -->
+
+<div class="modal fade" id="myPostAd" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    ×</button>
+                <h4 class="modal-title" id="myModalLabel">
+                    Submit a Free Classified Ad <a href="http://www.jquery2dotnet.com"></a></h4>
+            </div>
+
+            <div class="modal-body">
+                <div class="row">
+                    <div style="border-right: 1px dotted #C2C2C2;padding-right: 30px;">
+                        <!-- Nav tabs -->
+                        <ul class="nav nav-tabs">
+                            <li class="active"><a href="#Login" data-toggle="tab">Information</a></li>
+
+                        </ul>
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="Login">
+                                <form [formGroup]="AdForm" (ngSubmit)="onSubmit()" role="form" class="form-horizontal">
+                                    <div class="form-group">
+                                        <label for="email" class="col-sm-2 control-label">
+                                        Ad Title*</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" id="email1" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputPassword1" class="col-sm-2 control-label">
+                                        Category*</label>
+                                        <div class="col-md-10">
+                                            <select class="form-control">
+                                                     <option *ngFor="let item of Category">{{item}}</option>
+                                                </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="email" class="col-sm-2 control-label">
+                                        Ad Description*</label>
+                                        <div class="col-sm-10">
+                                            <input type="email" class="form-control" id="email1" placeholder="Include the brand, model, age and any other Information..."
+                                                style=" height:160px;" />
+                                        </div>
+                                    </div>
+
+
+
+                                    <hr style="line-height: : 2px">
+
+
+
+                                    <div class="form-group">
+                                        <h5 style="margin-left: 25"> Personal Information </h5>
+                                        <label for="email" class="col-sm-2 control-label">
+                                        Name</label>
+                                        <div class="col-sm-10">
+                                            <div class="row">
+                                                <div class="col-md-3">
+                                                    <select class="form-control">
+                                                    <option>Mr.</option>
+                                                    <option>Ms.</option>
+                                                    <option>Mrs.</option>
+                                                </select>
+                                                </div>
+                                                <div class="col-md-9">
+                                                    <input type="text" class="form-control" placeholder="Name" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="email" class="col-sm-2 control-label">
+                                        Email</label>
+                                        <div class="col-sm-10">
+                                            <input type="email" class="form-control" id="email" placeholder="Email" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="mobile" class="col-sm-2 control-label">
+                                        Mobile</label>
+                                        <div class="col-sm-10">
+                                            <input type="email" class="form-control" id="mobile" placeholder="Mobile" />
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-sm-2">
+                                        </div>
+                                        <div class="col-sm-10">
+                                            <button type="submit" class="btn btn-primary btn-sm">
+                                            Submit</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Post ad Ends-->
