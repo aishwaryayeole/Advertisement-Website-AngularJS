@@ -7,6 +7,7 @@ body {
 .navbar-default .navbar-nav > li.dropdown:hover > a:focus  {
     background-color: #75b63e;
     color:  #c4daac ;
+    
 }
 li.dropdown:hover > .dropdown-menu {
     display: block;

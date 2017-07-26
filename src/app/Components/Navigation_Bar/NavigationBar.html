@@ -19,32 +19,32 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" class="fontS">
                 <ul class="nav navbar-nav">
-                    <!-- <li><a href="#"><span class="glyphicon glyphicon-map-marker"></span> Select Location</a></li> -->
+                    <!-- <li><a  ><span class="glyphicon glyphicon-map-marker"></span> Select Location</a></li> -->
 
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-map-marker"></span> Select Location <b class="caret"></b></a>
+                        <a class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-map-marker"></span> Select Location <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Pune</a></li>
-                            <li><a href="#">Pimpri Chinchwad</a></li>
-                            <li><a href="#">Nagpur</a></li>
-                            <li><a href="#">Aurangabad</a></li>
-                            <li><a href="#">Thane</a></li>
-                            <li><a href="#">Kolhapur</a></li>
+                            <li><a>Pune</a></li>
+                            <li><a>Pimpri Chinchwad</a></li>
+                            <li><a>Nagpur</a></li>
+                            <li><a>Aurangabad</a></li>
+                            <li><a>Thane</a></li>
+                            <li><a>Kolhapur</a></li>
                             <li class="divider"></li>
-                            <li><a href="#">Mumbai</a></li>
-                            <li><a href="#">Chennai</a></li>
-                            <li><a href="#">Delhi</a></li>
-                            <li><a href="#">Hyderabad</a></li>
-                            <li><a href="#">Bangalore</a></li>
-                            <li><a href="#">Kolkata</a></li>
-                            <li><a href="#">Surat</a></li>
+                            <li><a>Mumbai</a></li>
+                            <li><a>Chennai</a></li>
+                            <li><a>Delhi</a></li>
+                            <li><a>Hyderabad</a></li>
+                            <li><a>Bangalore</a></li>
+                            <li><a>Kolkata</a></li>
+                            <li><a>Surat</a></li>
                             <li class="divider"></li>
                             <li> OOI
                                 <ul>
-                                    <li><a href="#">New York</a></li>
-                                    <li><a href="#">LA</a></li>
-                                    <li><a href="#">Tampa</a></li>
-                                    <li><a href="#">Florida</a></li>
+                                    <li><a>New York</a></li>
+                                    <li><a>LA</a></li>
+                                    <li><a>Tampa</a></li>
+                                    <li><a>Florida</a></li>
 
 
                                 </ul>
@@ -53,11 +53,11 @@
                     </li>
 
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-th-large"></span> Select Category <b class="caret"></b></a>
+                        <a class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-th-large"></span> Select Category <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li *ngFor="let item of Category"> {{item}} </li>
                             <li class="divider"></li>
-                            <li><a href="#">Other Services</a></li>
+                            <li><a>Other Services</a></li>
                         </ul>
                     </li>
 
@@ -70,22 +70,23 @@
                 </form>
                 <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">About Us <b class="caret"></b></a>
+                        <a class="dropdown-toggle" data-toggle="dropdown">About Us <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Help</a></li>
-                            <li><a href="#">Blog</a></li>
-                            <li><a href="#">Another Services</a></li>
+                            <li><a>Help</a></li>
+                            <li><a>Blog</a></li>
+                            <li><a>Another Services</a></li>
                             <li class="divider"></li>
-                            <li><a href="#">Contact Us</a></li>
+                            <li><a>Contact Us</a></li>
                             <li class="divider"></li>
-                            <li><a href="#">Feedback & Queries</a></li>
+                            <li><a>Feedback & Queries</a></li>
                         </ul>
                     </li>
-                    <!-- <li><a href="#"><span class="glyphicon glyphicon-user"></span>  Sign In</a></li> -->
+                    <!-- <li><a  ><span class="glyphicon glyphicon-user"></span>  Sign In</a></li> -->
+                    <button  (click)="getMyAds()" class="btn btn-xs btn-info" data-toggle="modal" data-target="#showMyAds" style="background-color:#151D17; margin-top:50; border: none;"><span class="glyphicon glyphicon-user"></span>Show my Ads</button>
 
                     <button class="btn btn-xs btn-info" data-toggle="modal" data-target="#myModal" style="background-color:#151D17; margin-top:50; border: none;"><span class="glyphicon glyphicon-user"></span> Sign In</button>
 
-                    <a href="#" class="btn btn-xs btn-info" data-toggle="modal" data-target="#myPostAd" style="background-color: #dacc1e ; color:black; font-weight: bold; margin-top:17; border: none; ">Post a free Ad</a>
+                    <a class="btn btn-xs btn-info" data-toggle="modal" data-target="#myPostAd" style="background-color: #dacc1e ; color:black; font-weight: bold; margin-top:17; border: none; ">Post a free Ad</a>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -94,6 +95,54 @@
     </nav>
 </div>
 
+<div class="modal fade" id="showMyAds" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    ×</button>
+                <h4 class="modal-title" id="myModalLabel">
+                    Show my Ads <a href="http://www.jquery2dotnet.com"></a></h4>
+            </div>
+
+            <div class="modal-body">
+                <div class="row">
+                    <div style="border-right: 1px dotted #C2C2C2;padding-right: 30px;">
+                        <!-- Nav tabs -->
+                        <ul class="nav nav-tabs">
+                            <li class="active"><a href="#Login" data-toggle="tab">All Ads</a></li>
+
+                        </ul>
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <div class="tab-pane active" >
+
+                                <table #opFormTable class="table table-striped" border="2" style="margin-left: 30">
+                                   
+                                    <th>Title</th>
+                                    <th>Name</th>
+                                    <th>Category</th>
+                                    <th>Description</th>
+                                    <th>Action</th>
+                                    <tr *ngFor="let item of AllAdvertisement; let i = index ">
+                                        
+                                        <td>{{item.title}}</td>
+                                        <td>{{item.name}}</td>
+                                        <td>{{item.category}}</td>
+                                        <td>{{item.description}}</td>
+                                        <td><a (click)="deleteAdv(i)">{{ActionList[0]}}</a> <br> <a (click)="editAd(item.newid)">{{ActionList[1]}}</a></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 
@@ -119,80 +168,94 @@
                         <!-- Tab panes -->
                         <div class="tab-content">
                             <div class="tab-pane active" id="Login">
-                                <form role="form" class="form-horizontal">
+                                <form #LoginForm="ngForm" role="form" class="form-horizontal" novalidate>
                                     <div class="form-group">
                                         <label for="email" class="col-sm-2 control-label">
-                                        Email</label>
+                                        Username</label>
                                         <div class="col-sm-10">
-                                            <input type="email" class="form-control" id="email1" placeholder="Email" />
+                                            <input type="text" name="userName" [value]="YourName" required minlength="4" class="form-control" placeholder="username"
+                                                #nameModelRef="ngModel" ngModel/>
+                                            <div *ngIf="nameModelRef.errors && nameModelRef.touched" class="alert alert-danger">
+
+                                                <div [hidden]="!nameModelRef.errors.required">Please Enter the name</div>
+                                                <div [hidden]="!nameModelRef.errors.minlength">Please Enter full Name</div>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label for="exampleInputPassword1" class="col-sm-2 control-label">
+                                        <label for="exampleInputPassword" class="col-sm-2 control-label">
                                         Password</label>
                                         <div class="col-sm-10">
-                                            <input type="email" class="form-control" id="exampleInputPassword1" placeholder="Email" />
+                                            <input #ipPswd type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password" />
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-sm-2">
                                         </div>
                                         <div class="col-sm-10">
-                                            <button type="submit" class="btn btn-primary btn-sm">
-                                            Submit</button>
+                                            <button type="submit" [disabled]="!LoginForm.form.valid" (click)="onSubmitLogin(nameModelRef.value,ipPswd.value)" class="btn btn-primary btn-sm"
+                                                data-dismiss="modal">Submit</button>
                                             <a href="javascript:;">Forgot your password?</a>
                                         </div>
                                     </div>
                                 </form>
                             </div>
                             <div class="tab-pane" id="Registration">
-                                <form role="form" class="form-horizontal">
+                                <form #RegForm="ngForm" (ngSubmit)="onSubmitReg(RegForm.value)" role="form" class="form-horizontal" novalidate>
                                     <div class="form-group">
-                                        <label for="email" class="col-sm-2 control-label">
-                                        Name</label>
+                                        <label for="name" class="col-sm-2 control-label">
+                                        FirstName*</label>
                                         <div class="col-sm-10">
-                                            <div class="row">
-                                                <div class="col-md-3">
-                                                    <select class="form-control">
-                                                    <option>Mr.</option>
-                                                    <option>Ms.</option>
-                                                    <option>Mrs.</option>
-                                                </select>
-                                                </div>
-                                                <div class="col-md-9">
-                                                    <input type="text" class="form-control" placeholder="Name" />
-                                                </div>
+                                            <input type="text" name="fName" class="form-control" placeholder="First Name" #fNameModelRef="ngModel" ngModel/>
+                                            <div *ngIf="fNameModelRef.errors && fNameModelRef.touched" class="alert alert-danger">
+                                                <div [hidden]="!fNameModelRef.errors.required">Please Enter the name</div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label for="email" class="col-sm-2 control-label">
-                                        Email</label>
+                                        <label for="name" class="col-sm-2 control-label">
+                                        LastName*</label>
                                         <div class="col-sm-10">
-                                            <input type="email" class="form-control" id="email" placeholder="Email" />
+                                            <input type="text" name="lName" class="form-control" placeholder="Last Name" #lNameModelRef="ngModel" ngModel/>
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label for="mobile" class="col-sm-2 control-label">
-                                        Mobile</label>
+                                        <label for="name" class="col-sm-2 control-label">
+                                        UserName*</label>
                                         <div class="col-sm-10">
-                                            <input type="email" class="form-control" id="mobile" placeholder="Mobile" />
+                                            <input type="text" name="uName" class="form-control" placeholder="User Name" #uNameModelRef="ngModel" ngModel/>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label for="password" class="col-sm-2 control-label">
-                                        Password</label>
+                                        Password*</label>
                                         <div class="col-sm-10">
-                                            <input type="password" class="form-control" id="password" placeholder="Password" />
+                                            <input type="password" name="regpassword" class="form-control" id="exampleInputPassword1" placeholder="  Password" #regPswd="ngModel"
+                                                ngModel/>
                                         </div>
                                     </div>
+                                    <div class="form-group">
+                                        <label for="email" class="col-sm-2 control-label">
+                                        Email*</label>
+                                        <div class="col-sm-10">
+                                            <input type="email" name="regEmailid" class="form-control" placeholder="Email" #regEmailid="ngModel" ngModel/>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="mobile1" class="col-sm-2 control-label">
+                                        Mobile*</label>
+                                        <div class="col-sm-10">
+                                            <input type="number" name="mobile" class="form-control" placeholder="Mobile" #mobileNo="ngModel" ngModel/>
+                                        </div>
+                                    </div>
+
                                     <div class="row">
                                         <div class="col-sm-2">
                                         </div>
                                         <div class="col-sm-10">
-                                            <button type="button" class="btn btn-primary btn-sm">
-                                            Save & Continue</button>
-                                            <button type="button" class="btn btn-default btn-sm">
+                                            <button type="submit" [disabled]="!RegForm.form.valid" class="btn btn-primary btn-sm" data-dismiss="modal">
+                                            Sign In</button>
+                                            <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">
                                             Cancel</button>
                                         </div>
                                     </div>
@@ -210,9 +273,9 @@
                             </div>
                             <div class="col-md-12">
                                 <div>
-                                    <a href="#" class="btn btn-primary" style="background-color:#3b5998 !important;">facebook</a>                                    </div>
+                                    <a class="btn btn-primary" style="background-color:#3b5998 !important;">facebook</a>                                    </div>
                                 <div style="padding-top: 5">
-                                    <a href="#" class="btn btn-danger">google</a>
+                                    <a class="btn btn-danger">google</a>
                                 </div>
                             </div>
                         </div>
@@ -227,12 +290,12 @@
     <div id="mySidenav" class="sidenav">
 
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="#"><span class="glyphicon glyphicon-user"></span>  My Account</a>
-        <a href="#" style="margin-left: 30">View my Ad</a>
-        <a href="#" style="margin-left: 30">Edit/ delete Ad</a>
-        <a href="#" style="margin-left: 30">Settings</a>
+        <a><span class="glyphicon glyphicon-user"></span>  My Account</a>
+        <a style="margin-left: 30">View my Ad</a>
+        <a style="margin-left: 30">Edit/ delete Ad</a>
+        <a style="margin-left: 30">Settings</a>
         <hr style="border: solid 0.08px dimgrey">
-        <a href="#"><span class="glyphicon glyphicon-off"></span> Log out</a>
+        <a><span class="glyphicon glyphicon-off"></span> Log out</a>
         <hr style="border: solid 0.08px dimgrey">
 
 
@@ -248,7 +311,6 @@
             document.getElementById("mySidenav").style.width = "0";
             document.getElementById("main").style.marginLeft = "0";
         }
-
     </script>
 </div>
 
@@ -275,30 +337,37 @@
                         <!-- Tab panes -->
                         <div class="tab-content">
                             <div class="tab-pane active" id="Login">
-                                <form [formGroup]="AdForm" (ngSubmit)="onSubmit()" role="form" class="form-horizontal">
+                                <form [formGroup]="AdForm" (ngSubmit)="onSubmit(AdForm.value)" role="form" class="form-horizontal" novalidate>
                                     <div class="form-group">
-                                        <label for="email" class="col-sm-2 control-label">
+                                        <label for="title" class="col-sm-2 control-label">
                                         Ad Title*</label>
                                         <div class="col-sm-10">
-                                            <input type="text" class="form-control" id="email1" />
+                                            <input #ipTitle type="text" formControlName="title" class="form-control" [value]="YourTitle" />
+                                            <div *ngIf="AdForm.controls['title'].touched">
+                                                <div *ngIf="AdForm.controls['title'].hasError('required')" class="alert alert-danger"> Please enter product name </div>
+                                                <div *ngIf="AdForm.controls['title'].hasError('minlength')" class="alert alert-danger"> Please Enter atleast 4 chracters</div>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputPassword1" class="col-sm-2 control-label">
                                         Category*</label>
                                         <div class="col-md-10">
-                                            <select class="form-control">
-                                                     <option *ngFor="let item of Category">{{item}}</option>
+                                            <select formControlName="category" #ipCat class="form-control">
+                                                     <option  *ngFor="let item of Category">{{item}}</option>
                                                 </select>
                                         </div>
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="email" class="col-sm-2 control-label">
+                                        <label for="AdDescription" class="col-sm-2 control-label">
                                         Ad Description*</label>
                                         <div class="col-sm-10">
-                                            <input type="email" class="form-control" id="email1" placeholder="Include the brand, model, age and any other Information..."
+                                            <input #ipDesc type="text" class="form-control" formControlName="description" [value]="YourDescription" placeholder="Include the brand, model, age and any other Information..."
                                                 style=" height:160px;" />
+                                            <div *ngIf="AdForm.controls['description'].touched">
+                                                <div *ngIf="AdForm.controls['description'].hasError('required')" class="alert alert-danger"> Please enter description </div>
+                                            </div>
                                         </div>
                                     </div>
 
@@ -310,7 +379,7 @@
 
                                     <div class="form-group">
                                         <h5 style="margin-left: 25"> Personal Information </h5>
-                                        <label for="email" class="col-sm-2 control-label">
+                                        <label for="name" class="col-sm-2 control-label">
                                         Name</label>
                                         <div class="col-sm-10">
                                             <div class="row">
@@ -322,7 +391,11 @@
                                                 </select>
                                                 </div>
                                                 <div class="col-md-9">
-                                                    <input type="text" class="form-control" placeholder="Name" />
+                                                    <input #ipName type="text" formControlName="name" class="form-control" placeholder="Name" [value]="YourName" />
+                                                    <div *ngIf="AdForm.controls['name'].touched">
+                                                        <div *ngIf="AdForm.controls['name'].hasError('required')" class="alert alert-danger"> Please enter product name </div>
+                                                        <div *ngIf="AdForm.controls['name'].hasError('minlength')" class="alert alert-danger"> Please Enter atleast 4 chracters</div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -331,14 +404,22 @@
                                         <label for="email" class="col-sm-2 control-label">
                                         Email</label>
                                         <div class="col-sm-10">
-                                            <input type="email" class="form-control" id="email" placeholder="Email" />
+                                            <input type="email" formControlName="emailid" [value]="Youremail" class="form-control" placeholder="me@example.com" />
+                                            <div *ngIf="AdForm.controls['emailid'].touched">
+                                                <div *ngIf="AdForm.controls['emailid'].hasError('required')" class="alert alert-danger"> Please enter EmailID</div>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label for="mobile" class="col-sm-2 control-label">
                                         Mobile</label>
                                         <div class="col-sm-10">
-                                            <input type="email" class="form-control" id="mobile" placeholder="Mobile" />
+                                            <input type="number" [value]="Yourmo" formControlName="mobile" class="form-control" placeholder="Mobile" />
+                                            <div *ngIf="AdForm.controls['mobile'].touched">
+                                                <div *ngIf="AdForm.controls['mobile'].hasError('required')" class="alert alert-danger"> Please enter Mobile Number</div>
+                                                <div *ngIf="AdForm.controls['mobile'].hasError('minlength')" class="alert alert-danger"> Please enter 10 digits </div>
+                                                <div *ngIf="AdForm.controls['mobile'].hasError('maxlength')" class="alert alert-danger"> Please enter 10 digits </div>
+                                            </div>
                                         </div>
                                     </div>
 
@@ -346,7 +427,7 @@
                                         <div class="col-sm-2">
                                         </div>
                                         <div class="col-sm-10">
-                                            <button type="submit" class="btn btn-primary btn-sm">
+                                            <button type="submit" [disabled]="!AdForm.valid" class="btn btn-primary">
                                             Submit</button>
                                         </div>
                                     </div>
