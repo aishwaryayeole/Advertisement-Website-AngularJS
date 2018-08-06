@@ -2,41 +2,58 @@ import { Injectable } from '@angular/core';
 import { Http, Response, RequestOptions, Headers, HttpModule } from '@angular/http';
 import 'rxjs/add/operator/map';
 import { Observable } from 'rxjs/Observable';
+import { NavBar } from '../Components/Navigation_Bar/NavigationBar.component';
+
 
 
 @Injectable()
 export class LoginService {
     constructor(private _http: Http) { }
 
-    static AuthKey: string;
+    static AuthKey: any;
+    static userId: any;
+    //static loginFlag: boolean = false;
 
     loginForm(userName: any, password: any) {
-        let url = "http://192.168.3.144:9000/login"; //Akshay machine
+        let url = "http://localhost:9099/xornet/loginUser";
         let headers = new Headers();
         headers.append('Content-Type', 'application/json');
-
         let options = new RequestOptions({ headers: headers });
         let jsonReq = { "userName": userName, "password": password };
-        let adObj = this._http.post(url, jsonReq, options).map((response: Response) => response.json());
-        adObj.subscribe((data) => {
-           console.log(data);
-            LoginService.AuthKey = data.data["auth-token"];
-            console.log("in Auth Key variable", LoginService.AuthKey)
-        });
+        return this._http.post(url, jsonReq, options).map((response: Response) => response.json());
+
+
+
+    }
+
+    logoutUser(){
+        console.log("In logoutUser",LoginService.AuthKey);
+
+        let url="http://localhost:9099/xornet/logoutUser";
+
+        let headers = new Headers();
+        headers.append('Content-Type', 'application/json');
+        headers.append('auth-token', LoginService.AuthKey);
+        
+        let options = new RequestOptions({ headers: headers });
+        //LoginService.AuthKey=null;
+
+        alert("You have successfully logged out");
+        return this._http.delete(url,options).map((response:Response)=>response.json());
+
+
     }
 
 
-    RegisterUser(regObj:any) {
-        let url = "http://192.168.3.144:9000/register"; //Akshay machine
-        //let url = "http://192.168.3.242:9000/postAd"; //Anand's machine
-        //let headers = new Headers([{ 'Content-Type': 'application/json' },
-        //                            {'auth-token': '5976e85d29226d1aa3c8e17d'}]);
+
+    RegisterUser(regObj: any) {
+        let url = "http://localhost:9099/xornet/register"; 
         let headers = new Headers();
         headers.append('Content-Type', 'application/json');
 
         let options = new RequestOptions({ headers: headers });
         let jsonReq = {
-            "firstName":regObj.fName,
+            "firstName": regObj.fName,
             "lastName": regObj.lName,
             "userName": regObj.uName,
             "password": regObj.regpassword,
@@ -45,8 +62,15 @@ export class LoginService {
         }
         console.log("jsonReq", jsonReq);
         let adObj = this._http.post(url, jsonReq, options).map((response: Response) => response.json());
-        adObj.subscribe((data) => console.log("My Adv in Reg method:-  ", data));
-
+        adObj.subscribe((data) => 
+            {
+            if(data.data=="Successful")
+                alert("Registration Successful !");
+            else
+                alert("Registration Unsuccessful !");
+            }
+        );
+       
     }
 
 }

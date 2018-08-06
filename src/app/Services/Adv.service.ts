@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http, Response, RequestOptions, Headers, HttpModule } from '@angular/http';
 import 'rxjs/add/operator/map';
 import { Observable } from 'rxjs/Observable';
+import { LoginService } from './Login.service';
 
 
 @Injectable()
@@ -9,48 +10,58 @@ export class AdvService {
     constructor(private _http: Http) { }
 
     postAd(postAdObj: any) {
-        let url = "http://192.168.3.144:9000/postAd"; //Akshay machine
-        //let url = "http://192.168.3.242:9000/postAd"; //Anand's machine
-        //let headers = new Headers([{ 'Content-Type': 'application/json' },
-        //                            {'auth-token': '5976e85d29226d1aa3c8e17d'}]);
+        let url = "http://localhost:9099/xornet/postad";
         let headers = new Headers();
-        headers.append('auth-token', '5976eb951c0edf75e32798e8');
+        headers.append('auth-token', LoginService.AuthKey);
         headers.append('Content-Type', 'application/json');
 
         let options = new RequestOptions({ headers: headers });
-        let jsonReq = { "title": postAdObj.title, "name": postAdObj.name, "category": postAdObj.category, "description": postAdObj.description };
-        console.log("jsonReq", jsonReq);
-        let adObj = this._http.post(url, jsonReq, options).map((response: Response) => response.json());
+        //let jsonReq = { "title": postAdObj.title,  "category": postAdObj.category, "description": postAdObj.description };
+        console.log("jsonReq", postAdObj);
+        let adObj = this._http.post(url, postAdObj, options).map((response: Response) => response.json());
         adObj.subscribe((data) => console.log("My Adv in postAD method:-  ", data));
 
+        alert("Advertisement Posted Successfully");
+        //"name": postAdObj.name,
     }
 
 
     getAllAds() {
-        let url = "http://192.168.3.144:9000/posts"; //Akshay machine
-        //let url = "http://192.168.3.242:9000/postAd"; //Anand's machine
-        //let headers = new Headers([{ 'Content-Type': 'application/json' },
-        //                            {'auth-token': '5976e85d29226d1aa3c8e17d'}]);
+        let url = "http://localhost:9099/xornet/getads"; 
         let headers = new Headers();
-        headers.append('auth-token', '5976eb951c0edf75e32798e8');
+        headers.append('auth-token', LoginService.AuthKey);
         headers.append('Content-Type', 'application/json');
 
         let options = new RequestOptions({ headers: headers });
-        let adObj = this._http.get(url, options).map((response: Response) => response.json());
-        adObj.subscribe((data) => console.log(data));
-        return adObj;
+        return this._http.get(url, options).map((response: Response) => response.json());
+        //adObj.subscribe((data) => console.log(data));
+       // return adObj;
     }
 
+    getAllUserAds()
+    {
+        let url="http://localhost:9099/xornet/getallads";
+
+        let headers = new Headers();
+        headers.append('Content-Type', 'application/json');
+        let options = new RequestOptions({ headers: headers });
+        console.log("In service");
+        return this._http.get(url,options).map((response: Response) => response.json());
+    }
 
     deletAdvService(id: any) {
-        let url = 'http://192.168.3.144:9000/post?postId=';
+        console.log("In deletAdvService");
+
+        let url = 'http://localhost:9099/xornet/deleteAd?postId=';
+
         return this._http.delete(url + id).map((response: Response) => response.json());
     }
 
      getAction()
   {
-      return this._http.get('http://192.168.3.144:9000/actions').map((response:Response)=>response.json());
+      return this._http.get('http://localhost:9099/xornet/actions').map((response:Response)=>response.json());
   }
+
 
 
 
